@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+		<title>Compiladores</title>
+		<meta name="description" content="Trabalho prático de Compiladores: Um compilador para a linguagem C" />
+		<meta name="keywords" content="compiladores, ufsj, compilador C" />
+		<meta name="author" content="Isabella e Mônica" />
+		<link rel="shortcut icon" href="../favicon.ico">
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+
+		<link rel="stylesheet" type="text/css" href="css/normalize.css" />
+		<link rel="stylesheet" type="text/css" href="css/demo.css" />
+		<link rel="stylesheet" type="text/css" href="css/icons.css" />
+		<link rel="stylesheet" type="text/css" href="css/component.css" />
+		<link rel="stylesheet" type="text/css" href="css/materialize.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/style.css" />
+		<script src="js/jquery-2.1.4.min.js"></script>
+		<script src="js/jszip.min.js"></script>
+		<script src="js/FileSaver.js"></script>
+		<script src="js/materialize.min.js"></script>
+		<script src="js/extra.js"></script>
+		<script src="js/modernizr.custom.js"></script>
+		<script src="js/myscripts.js"></script>
+
+		<!--<script src="js/materialize.min.js"></script>-->
+	</head>
+	<body>
+		<div id="st-container" class="st-container">
+		<!-- content push wrapper -->
+			<div class="st-pusher">			
+
+				<div class="st-content"><!-- this is the wrapper for the content -->
+					<div class="st-content-inner"><!-- extra div for emulating position:fixed of the menu -->
+						<!-- Top Navigation -->
+						<div id="st-trigger-effects" class="codrops-top clearfix">
+							<header class="codrops-header">
+								<h1>Trabalho prático de Compiladores:<span> Um compilador para a linguagem C</span></h1>
+							</header>
+						</div>
+						<div class="main clearfix">
+					
+							<div id='page'  class="column" style="text-align:center!important; width: 100%!important;">
+								<div class="header">
+									<h5>Upload do código</h5>
+								</div>
+								<!--<button onclick="sintatico()">Sintatico</button>-->
+								<div class="file-upload-div">
+									<form id="uploading" action="#">
+										<div class="file-field input-field">
+											<div class="btn">
+												<input type="file" onchange="obterArquivo(this)"/>Upload
+											</div>
+											<div class="file-path-wrapper">
+												<input class="file-path validate" type="text"/>
+											</div>
+										</div>
+									</form>
+								</div>
+
+								<!--<div class="ocultar-div" id="status-message">
+									<h5 id="message-about-code" class="center-align"></h5>
+								</div>-->
+								
+								<div class="row" style='padding-top: 8%;'>
+									<div class="file-content-div ocultar-div col s6" id="arquivoSaida"></div>
+									<div id='results-div'>
+										  <ul class="collapsible col s6" data-collapsible="accordion">
+											<li>
+											  <div class="collapsible-header"><strong><p style='    font-size: large!important;'>Erros Léxicos<span id='lexico-erros' class=" font-size label label-default"></span></p></strong></div>
+											  <div class="collapsible-body">
+													<div class="espacamento ocultar-div" id="tabelaErrosLexicos"></div> 
+											  </div>
+
+											</li>
+											<li>
+											  <div class="collapsible-header"><p style='    font-size: large!important;'>Erros Sintáticos<span  id='sintatico-erros' class=" font-size label label-default"></span></p></div>
+											  <div class="collapsible-body">
+											  <div class="espacamento ocultar-div" id="tabelaErrosSintatico"></div> 
+											  </div>
+											</li>
+											<li>
+											  <div class="collapsible-header"><p style='    font-size: large!important;'>Código Intermediário<span  id='code-intermediario'  class="font-size label label-default"></span></p></div>
+											  <div class="collapsible-body">
+													<div class="ocultar-div centralize" style='    padding-top: 8%;     padding-bottom: 10%;' id="botao-download-div">
+														<a class="waves-eff ect waves-light btn center-align" onclick="download_tabelas();">Download Tabelas</a>
+													</div>
+													 <div class="row center">
+														<div class="espacamento ocultar-div" id="tabelaToken"></div> 
+														<div class="espacamento ocultar-div" id="tabelaConst"></div>
+														<div class="espacamento ocultar-div" id="tabelaLite"></div>
+														<div class="espacamento ocultar-div" id="tabelaVariaveis"></div>
+											
+													</div> 							
+											  </div>
+											</li>
+											</div>
+							</div>		
+							
+							<div class="info">
+								<p>Autoras:</p>
+								<p>
+									<a href="https://bitbucket.org/isabellavieira57/">Isabella Vieira Ferreira</a><br>
+									<a href="https://bitbucket.org/monicaneli26/">Mônica Neli de Resende</a>
+								</p>
+							</div>
+						</div><!-- /main -->
+					</div><!-- /st-content-inner -->
+				</div><!-- /st-content -->
+			</div><!-- /st-pusher -->
+		</div><!-- /st-container -->
+		<script src="js/classie.js"></script>
+		<script src="js/sidebarEffects.js"></script>
+	</body>
+</html>

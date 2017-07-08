@@ -1,0 +1,43 @@
+#################################################################################################################
+													README
+											   TRABALHO PRÁTICO 1
+								ANALISADOR LÉXICO E SINTATICO DE UM COMPILADOR PARA A LINGUAGEM C
+										
+Alunas: Isabella Vieira Ferreira
+		Monica Neli de Resende
+Semestre: 2015/02
+Disciplina: Compiladores
+Curso/Universidade: Ciência da Computação | UFSJ
+##################################################################################################################
+
+
+1. Propósito
+	O objetivo deste trabalho é desenvolver um analisador léxico e sintático de um compilador para a linguagem C.
+ 
+2. Linguagem desenvolvida
+   O analisador léxico e sintático foi desenvolvido na linguagem de programação JavaScript.
+
+3. Entrada e Saída de Dados
+   O programa recebe como entrada um código-fonte escrito na linguagem C. Como saída, é mostrado na tela para o usuário as tabelas de tokens, constantes, identificadores e literais, e os erros léxicos e sintáticos encontrados no código-fonte . Além disso, o usuário pode fazer o download do arquivo .txt referente a cada tabela descrita anteriormente. Caso haja erro léxico e/ou sintático, somente o arquivo .txt de erros é criado.
+
+4. Como compilar/executar
+	- Para o correto funcionamento do analisador léxico e sintático desenvolvido é necessário ter o servidor Apache instalado.
+	- É necessário colocar o código-fonte do analisador léxico na pasta /var/www/<nome_diretorio>
+	- Para executar, digite no no browser:
+		localhost/<nome_diretorio>/index.html
+
+5. Decisões de implementação do projeto		
+
+	ANALISADOR LÉXICO
+		O arquivo de entrada é lido caracter a caracter. A cada caracter lido, é verificado se este é um delimitador, literal, atribuição, comentário, semicolon, operador ou palavra reservada. Existem funções que tratam cada uma dessas possibilidades listadas acima, adicionando o token lido (se este for válido na sintaxe reconhecida pelo compilador) na tabela de tokens ou na tabela de constantes ou literais ou identificadores, caso este seja o caso. Cada função trata o possível erro e o coloca em uma tabela de erros.
+
+		Foi utilizado a estratégia de leitura caracter a caracter com dois ponteiros, sendo: sentinela aponta para o primeiro caracter do token e lookAhead aponta para a próxima posição depois do sentinela. O ponteiro lookAhead é incrementado a todo momento percorrendo todos os caracteres.
+
+	ANALISADOR SINTÁTICO
+		O algoritmo verifica a sintaxe como se fosse a mudança de estados em um autômato. Tal automâto inicia com um statement e possui cinco estados iniciais, sendo eles: declaração, atribuição, while, if, print, read. Cada token é lido da tabela de tokens (gerado pelo analisador léxico). A medida que os tokens são lidos, eles são atribuídos a um dos cinco possíveis estados do autômato, que verifica se a estrutura (sintaxe) está correta. Caso não esteja, um erro é atribuido à tabela de erros sintáticos.
+
+	Foi utilizado a linguagem JavaScript devido a possibilidade de disponibilizar o compilador final online, ou seja, qualquer um pode acessar de qualquer lugar.
+
+
+6. Exemplo de utilização.
+	Na pasta do projeto você encontra vários exemplos de entrada.
